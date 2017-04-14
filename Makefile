@@ -39,7 +39,7 @@ CSOURCES= \
 
 CSOURCES+=	\
 	src/main.c src/ft_send.c src/ft_manager.c \
-	src/ft_init.c \
+	src/ft_init.c src/ft_timer.c\
 
 INCLUDES_LIBS=
 LINK_LIBS=
@@ -65,6 +65,7 @@ $(BINDIR)/$(BINELF): $(OBJECTS)
 	$(CXX) $(OBJECTS) $(LDFLAGS) -o $@
 	@echo "Linking complete!\n"
 	$(SIZE) $(BINDIR)/$(BINELF)
+	rm -f $(OBJECTS)
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) $< -o $@

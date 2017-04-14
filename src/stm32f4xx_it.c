@@ -39,7 +39,6 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "ft_init.h"
 #include "stm32f4xx_it.h"
 
    

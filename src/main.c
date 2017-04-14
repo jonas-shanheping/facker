@@ -38,9 +38,6 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "ft_send.h"
-#include "ft_init.h"
-
 
 /** @addtogroup STM32F4xx_HAL_Examples
  * @{
@@ -79,7 +76,7 @@ int main(void)
     for(i=0; i<1000000000; i++);
     BSP_LED_Off(LED4);
 
-    sys_timer_handle(TIMER3, TIMER_START);
+    ft_timer_handle(TIMER3, TIMER_START);
 
     gstr_irs.s_flag = 1;
 

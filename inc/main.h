@@ -42,6 +42,9 @@
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f4xx_hal.h"
 #include "stm32f411e_discovery.h"
+#include "ft_init.h"
+#include "ft_timer.h"
+#include "ft_send.h"
 
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
