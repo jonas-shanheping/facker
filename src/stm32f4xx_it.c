@@ -39,7 +39,9 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "ft_init.h"
 #include "stm32f4xx_it.h"
+
    
 /** @addtogroup STM32F4xx_HAL_Examples
   * @{
@@ -53,7 +55,6 @@
 /* Private define ------------------------------------------------------------*/
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
-extern TIM_HandleTypeDef    TimHandle;
 
 /* Private function prototypes -----------------------------------------------*/
 /* Private functions ---------------------------------------------------------*/
@@ -168,13 +169,13 @@ void SysTick_Handler(void)
 /******************************************************************************/
 
 /**
-  * @brief  This function handles TIM interrupt request.
+  * @brief  This function handles TIM3 interrupt request.
   * @param  None
   * @retval None
   */
-void TIMx_IRQHandler(void)
+void TIMER3_IRQHandler(void)
 {
-  HAL_TIM_IRQHandler(&TimHandle);
+     HAL_TIM_IRQHandler(&gstr_tim_handle[TIMER3]);
 }
 
 /**

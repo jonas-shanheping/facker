@@ -37,6 +37,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "ft_init.h"
 
 /** @addtogroup STM32F4xx_HAL_Examples
   * @{
@@ -68,16 +69,21 @@
   */
 void HAL_TIM_Base_MspInit(TIM_HandleTypeDef *htim)
 {
-  /*##-1- Enable peripherals and GPIO Clocks #################################*/
-  /* TIMx Peripheral clock enable */
-  __HAL_RCC_TIM3_CLK_ENABLE();
-  
-  /*##-2- Configure the NVIC for TIMx ########################################*/
-  /* Set Interrupt Group Priority */ 
-  HAL_NVIC_SetPriority(TIMx_IRQn, 4, 0);
-  
-  /* Enable the TIMx global Interrupt */
-  HAL_NVIC_EnableIRQ(TIMx_IRQn);
+  if(htim->Instance == TIM2){
+          __HAL_RCC_TIM2_CLK_ENABLE();
+          HAL_NVIC_SetPriority(TIMER2_IRQn, 4, 0);
+          HAL_NVIC_EnableIRQ(TIMER2_IRQn);
+  }
+  else if(htim->Instance == TIM3){
+      __HAL_RCC_TIM3_CLK_ENABLE();
+      HAL_NVIC_SetPriority(TIMER3_IRQn, 4, 0);
+      HAL_NVIC_EnableIRQ(TIMER3_IRQn);
+  }
+  else if(htim->Instance == TIM4){
+      __HAL_RCC_TIM4_CLK_ENABLE();
+      HAL_NVIC_SetPriority(TIMER4_IRQn, 4, 0);
+      HAL_NVIC_EnableIRQ(TIMER4_IRQn);
+  }
 }
 
 /**

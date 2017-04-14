@@ -14,7 +14,7 @@ BINELF=facker.elf
 BIN=facker.bin
 
 INCLUDES= \
-   -Iinclude \
+   -Iinc \
    -Ilib/BSP/STM32F411E-Discovery \
    -Ilib/STM32F4xx_HAL_Driver/Inc \
    -Ilib/CMSIS/Include \
@@ -39,6 +39,7 @@ CSOURCES= \
 
 CSOURCES+=	\
 	src/main.c src/ft_send.c src/ft_manager.c \
+	src/ft_init.c \
 
 INCLUDES_LIBS=
 LINK_LIBS=
